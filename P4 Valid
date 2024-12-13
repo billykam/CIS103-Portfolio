@@ -1,0 +1,33 @@
+name = input('Enter your first name: ')
+accnum = input('Enter your account number: ')
+paym = input('Enter your payment amount: ')
+
+if len(name) == 0 or name.isspace():
+    print('Your first name cannot be blank')
+elif len(name) < 3:
+    print('Name must be at least 3 characters in length')
+elif not name.isalpha():
+    print('Name must be entirely alphabetic')
+
+if len(accnum) == 0 or accnum.isspace():
+    print('Account number cannot be blank')
+elif len(accnum) !=9:
+    print('Account number must conatain 9 digits')
+elif not accnum.isnumeric():
+    print('Account number must be numeric')
+
+if len(paym) == 0 or paym.isspace():
+    print('Payment may not be blank')
+elif float(paym) < 0:
+    print('Payment cannot be a negative amount')
+elif float(paym) == 0:
+    print('Payment cannot be zero')
+elif not paym.isnumeric():
+    print('Payment must be numeric')
+
+else:
+
+#finaloutput
+    print('Name: ', name ,    'valid')
+    print('Account Number: ',accnum,    'valid')
+    print(f'Payment Amount: ${float(paym):.2f}',   'valid')
