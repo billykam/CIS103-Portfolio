@@ -1,0 +1,59 @@
+#property tax program 1
+def part1():
+    nheac = .004
+    mwrdc = .406
+    pmab = .006
+    cpd = .362
+    MiscTx = nheac + mwrdc + pmab + cpd
+    return MiscTx
+def part2():
+    bec = 3.726
+    cccd = .169
+    Schooltax = bec + cccd
+    return Schooltax
+def part3():
+    csbif = .128
+    clf = .122
+    city = 1.630
+    City = csbif + clf + city
+    return City
+def part4():
+    ccfpd = .063
+    cook = .316
+    ccps = .130
+    cchf = .087
+    CookCty = ccfpd + cook + ccps + cchf
+    return  CookCty
+def main():
+    print('------------------------------')
+    mt = part1()
+    st = part2()
+    ct = part3()
+    cc = part4()
+    TotalTaxRate = mt + st + ct + cc
+    print('Your Property Tax Rate is: ', TotalTaxRate)
+main()
+
+#property tax program 2
+def getinput(msg):
+    xin = float(input(msg))
+    return xin
+def main():
+    #print('\n'*a)
+    AssessmentLevel = .10
+    HomeOwnerEx = 500.43
+    SeniorCEX = 357.45
+    PropertyValue = getinput('Enter value of property: ')
+    LocalTaxRate = getinput('Enter local tax rate: ')
+    StateEqualizer = getinput('Enter state equalizer rate: ')
+    #print('\n'*e)
+    AssessedValue = PropertyValue * AssessmentLevel
+    EqualizeValue = AssessedValue * StateEqualizer
+    PropertyTaxBefore = EqualizeValue * LocalTaxRate
+    TotalPropertyTax = PropertyTaxBefore - HomeOwnerEx - SeniorCEX
+    #print('\n'*b)
+    print('Property taxes due: ',TotalPropertyTax)
+    #print('\n'*c)
+    return
+main()
+
