@@ -1,0 +1,29 @@
+def main():
+    rainfall = []
+    months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+   
+    for month in months:
+        rain = input(f'Enter rainfall in Chicago for {month}: ')
+        while not rain.replace('.', '', 1).isdigit() or float(rain) < 0:
+            if not rain.replace('.', '', 1).isdigit():
+                print('INVALID Must enter a decimal number')
+            elif float(rain) < 0:
+                print('Rainfall cannot be negative.')
+            rain = input(f'Enter rainfall for {month}: ').strip()
+        rainfall.append(float(rain))
+
+    highest = max(rainfall)
+    low = min(rainfall)
+    t = sum(rainfall)
+    a = t / len(rainfall)
+
+    hm = months[rainfall.index(highest)]
+    lm = months[rainfall.index(low)]
+
+    print('\nData list:', rainfall)
+    print(f"Highest: {hm} {highest:.2f}")
+    print(f"Lowest: {lm} {low:.2f}")
+    print(f'Total: {t:.2f}')
+    print(f'Average: {a:.2f}')
+
+main()
