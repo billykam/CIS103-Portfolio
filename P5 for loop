@@ -1,0 +1,24 @@
+print('Table codes: A = add, S = subtract, M = multiply, D = divide')
+table_op = input('Select table code: ')
+numb = float(input('Enter number for table: '))
+
+if table_op == 'A':
+    print('You selected Addition')
+    for x in range(1,11):
+        print(float(numb*x), '=', numb, '+', x)
+    print('done----------')
+elif table_op == 'S':
+    print('You selected Subtraction')
+    for x in range(1,11):
+        print(float(numb-x), '=', numb, '-', x)
+    print('done---------------')
+elif table_op == 'M':
+    print('You selected Multiplication')
+    for x in range(1,11):
+        print(float(numb*x), '=', numb, '*', x)
+    print('done---------------')
+elif table_op == 'D':
+    print('You selected Division')
+    for x in range(1,11):
+        print(float(numb/x), '=', numb, '/', x)
+    print('done------------')
