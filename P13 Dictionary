@@ -1,0 +1,58 @@
+roman_dict = {1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V',
+    6: 'VI', 7: 'VII', 8: 'VIII', 9: 'IX', 10: 'X',
+    11: 'XI', 12: 'XII', 13: 'XIII', 14: 'XIV', 15: 'XV',
+    16: 'XVI', 17: 'XVII', 18: 'XVIII', 19: 'XIX', 20: 'XX',
+    21: 'XXI', 22: 'XXII', 23: 'XXIII', 24: 'XXIV'}
+
+def print_dictionary(dictionary):
+    print(f"{'Decimal':<8} | {'Roman Numeral':<15}")
+    print('-' * 25)  
+    for key, value in dictionary.items():
+        print(f"{key:<8} | {value:<15}")
+
+def is_alphabetic(s):
+    return s.isalpha()
+
+def main():
+    print('Initial Dictionary: ')
+    print_dictionary(roman_dict)  
+    test = True  
+
+    while test:  
+        user_input = input("Enter a positive integer (or 'STOP' to end): ")
+       
+        if user_input.strip().lower() == 'STOP':
+            print('Quit.')
+            break  
+       
+        if user_input.strip() == '':
+            print('Input cannot be blank. Please try again.')
+            continue
+       
+        try:
+            number = int(user_input)
+            if number < 1:  
+                print('Error: Please enter a positive integer greater than zero.')
+                continue
+        except ValueError:
+            print('Input must be a number. Please try again.')
+            continue
+       
+        if number in roman_dict:
+            print(f"The Roman numeral for {number} is {roman_dict[number]}.")
+        else:
+            roman_numeral = input(f"{number} is not in the dictionary. Enter the Roman numeral for {number}: ")
+            if is_alphabetic(roman_numeral):
+                roman[number] = roman_numeral
+                print(f"Added {number}: {roman_numeral} to the dictionary.")
+            else:
+                print("Roman numeral must be alphabetic. Not added to the dictionary.")
+
+        more = input("Do you want to continue? (y/n): ").strip().lower()
+        if more == 'n' or more== 'N':
+            test = False  
+
+    print('Final Dictionary: ')
+    print_dictionary(roman_dict)  
+
+main()
