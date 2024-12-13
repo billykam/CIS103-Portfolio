@@ -1,0 +1,18 @@
+WIP = float(input('Enter weight of screws in pounds: '))
+GS = (WIP*0.99)
+Disc = 0
+if(WIP>=10) and (WIP<=99.99):
+  Disc  = (GS*0.10)
+elif(WIP>=100)and(WIP<=999.99):
+  Disc = (GS*0.20)
+elif(WIP>=1000)and(WIP<=9999.99):
+  Disc = (GS*0.30)
+elif(WIP>=10000):
+  Disc = (GS*40)
+else:
+  Disc=0
+Fin = (GS-Disc)
+print('Weight of screws in pounds: ',WIP)
+print('Gross Sales: ',GS)
+print('Discount: ',Disc)
+print('Final amount: ',Fin)
