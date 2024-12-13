@@ -1,0 +1,36 @@
+def distance():
+    try:
+        m = float(input('Enter the distance in miles: '))
+        k = m * 1.609344
+        print('Distance in kilometers is: ',k)
+        return
+    except:
+        print('Unknown error')
+        
+def temp():
+    try:
+        f = float(input('Enter temperature in Fahrenheit: '))
+        c = (f-32) * 5/9
+        print('Temperature in Celsius: ',c)
+        return
+    except:
+        print('Unknown error')
+
+def weight():
+    try:
+        lb = float(input('Enter the weight in pounds: '))
+        kg = lb * 0.45359237
+        print('Weight in kilograms is: ',kg)
+    except:
+        print('Unknown error')
+
+def main():
+    a = 'y'
+    while (a == 'y' or a == 'Y'):
+        distance()
+        temp()
+        weight()
+        a = input('Try again? y/n: ')
+        
+
+main()
